@@ -64,14 +64,14 @@ const detectChanges = (
         `Prev value: ${
           isObject(prevVals[i]) && !isFunction(prevVals[i])
             ? JSON.stringify(prevVals[i])
-            : prevVals[i]
+            : `${prevVals[i]}`
         }`
       );
       console.info(
         `New  value: ${
           isObject(newVals[i]) && !isFunction(newVals[i])
             ? JSON.stringify(newVals[i])
-            : newVals[i]
+            : `${newVals[i]}`
         }`
       );
       changeFlag = true;

@@ -36,10 +36,10 @@ var detectChanges = function (name, prevVals, newVals, keys) {
             console.info("Rerender in ".concat(name, " caused by \"").concat(keys[i], "\""));
             console.info("Prev value: ".concat((0, lodash_1.isObject)(prevVals[i]) && !(0, lodash_1.isFunction)(prevVals[i])
                 ? JSON.stringify(prevVals[i])
-                : prevVals[i]));
+                : "".concat(prevVals[i])));
             console.info("New  value: ".concat((0, lodash_1.isObject)(newVals[i]) && !(0, lodash_1.isFunction)(newVals[i])
                 ? JSON.stringify(newVals[i])
-                : newVals[i]));
+                : "".concat(newVals[i])));
             changeFlag = true;
         }
         return changeFlag;

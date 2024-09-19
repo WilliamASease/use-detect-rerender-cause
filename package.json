@@ -1,7 +1,7 @@
 {
   "homepage": "./",
   "name": "use-detect-rerender-cause",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
