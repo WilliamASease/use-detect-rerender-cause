@@ -6,8 +6,7 @@ function App() {
       <div
         style={{
           height: "100%",
-          border: "solid black 1px",
-          background: "lightgrey",
+          width: "66%",
         }}
       >
         <Cases />

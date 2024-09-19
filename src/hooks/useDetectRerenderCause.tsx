@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { isObject } from "lodash";
 
 export const useDetectRerenderCauseDeps = (props: {
   name: string;
@@ -59,8 +60,16 @@ const detectChanges = (
   for (let i = 0; i < prevVals.length; i++) {
     if (prevVals[i] !== newVals[i]) {
       console.info(`Rerender in ${name} caused by "${keys[i]}"`);
-      console.info(`Prev value: [${prevVals[i]}]`);
-      console.info(`New  value: [${newVals[i]}]`);
+      console.info(
+        `Prev value: [${
+          isObject(prevVals[i]) ? JSON.stringify(prevVals[i]) : prevVals[i]
+        }]`
+      );
+      console.info(
+        `New  value: [${
+          isObject(newVals[i]) ? JSON.stringify(newVals[i]) : newVals[i]
+        }]`
+      );
       changeFlag = true;
     }
     return changeFlag;

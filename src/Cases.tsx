@@ -16,6 +16,7 @@ const TestComponent = (props: {
   num?: number;
   func?: () => void;
   arr?: number[];
+  obj?: Object;
 }) => {
   useDetectRerenderCauseProps({ props: props, name: "Test Component" });
   return (
@@ -84,6 +85,27 @@ const cases: Case[] = [
   },
   {
     title: "Example 4",
+    description: "A useEffect that fires because an array mutates",
+    Component: () => {
+      const [obj, setObj] = useState({ num: 0 });
+      useDetectRerenderCauseDeps({
+        name: "Effect Case 4",
+        deps: [obj],
+      });
+      useEffect(() => {}, [obj]);
+      return (
+        <>
+          <div>{`${JSON.stringify(obj)}`}</div>
+          <Button
+            onPress={() => setObj((prev) => ({ num: prev.num + 1 }))}
+            text="increase"
+          />
+        </>
+      );
+    },
+  },
+  {
+    title: "Example 5",
     description: "A test component that fires when a number increments",
     Component: () => {
       const [num, setNum] = useState(0);
@@ -102,7 +124,7 @@ const cases: Case[] = [
     },
   },
   {
-    title: "Example 5",
+    title: "Example 6",
     description: "A test component that fires because a function recalculates",
     Component: () => {
       const [num, setNum] = useState(0);
@@ -123,7 +145,7 @@ const cases: Case[] = [
     },
   },
   {
-    title: "Example 6",
+    title: "Example 7",
     description: "A test component that updates when an array updates",
     Component: () => {
       const [arr, setArr] = useState([0, 1, 2]);
@@ -135,6 +157,23 @@ const cases: Case[] = [
             text="increase"
           />
           <TestComponent arr={arr} />
+        </>
+      );
+    },
+  },
+  {
+    title: "Example 8",
+    description: "A test component that updates when an object updates",
+    Component: () => {
+      const [obj, setObj] = useState({ num: 0 });
+      return (
+        <>
+          <div>{`${JSON.stringify(obj)}`}</div>
+          <Button
+            onPress={() => setObj((prev) => ({ num: prev.num + 1 }))}
+            text="increase"
+          />
+          <TestComponent obj={obj} />
         </>
       );
     },

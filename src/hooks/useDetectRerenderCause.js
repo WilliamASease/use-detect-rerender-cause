@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.useDetectRerenderCauseProps = exports.useDetectRerenderCauseDeps = void 0;
 var react_1 = require("react");
+var lodash_1 = require("lodash");
 var useDetectRerenderCauseDeps = function (props) {
     (0, react_1.useEffect)(function () { return console.info("Watching effect with name ".concat(props.name)); }, [props.name]);
     var _a = (0, react_1.useState)(props.deps), prevDeps = _a[0], setPrevDeps = _a[1];
@@ -33,8 +34,8 @@ var detectChanges = function (name, prevVals, newVals, keys) {
     for (var i = 0; i < prevVals.length; i++) {
         if (prevVals[i] !== newVals[i]) {
             console.info("Rerender in ".concat(name, " caused by \"").concat(keys[i], "\""));
-            console.info("Prev value: [".concat(prevVals[i], "]"));
-            console.info("New  value: [".concat(newVals[i], "]"));
+            console.info("Prev value: [".concat((0, lodash_1.isObject)(prevVals[i]) ? JSON.stringify(prevVals[i]) : prevVals[i], "]"));
+            console.info("New  value: [".concat((0, lodash_1.isObject)(newVals[i]) ? JSON.stringify(newVals[i]) : newVals[i], "]"));
             changeFlag = true;
         }
         return changeFlag;
