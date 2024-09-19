@@ -9,3 +9,4 @@ William Sease 2024
 
 Demo here: williamasease.github.io/use-detect-rerender-cause
 Examples in /src/cases
+npm install use-detect-rerender-cause
