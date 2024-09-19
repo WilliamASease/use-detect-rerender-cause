@@ -6,3 +6,6 @@ No configuration, no hassle.
 Property objects will deduce their names from the keys, lists of dependencies will give the index.
 
 William Sease 2024
+
+Demo here: williamasease.github.io/use-detect-rerender-cause
+Examples in /src/cases
