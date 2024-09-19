@@ -57,7 +57,7 @@ const cases: Case[] = [
       return (
         <>
           <div>{num}</div>
-          <Button onPress={() => setNum((prev) => prev + 1)} text="increase" />
+          <Button onPress={func} text="increase" />
         </>
       );
     },
@@ -85,7 +85,7 @@ const cases: Case[] = [
   },
   {
     title: "Example 4",
-    description: "A useEffect that fires because an array mutates",
+    description: "A useEffect that fires because an object is replaced",
     Component: () => {
       const [obj, setObj] = useState({ num: 0 });
       useDetectRerenderCauseDeps({
