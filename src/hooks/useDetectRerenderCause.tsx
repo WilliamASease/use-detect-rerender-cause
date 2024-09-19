@@ -41,7 +41,6 @@ export const useDetectRerenderCauseProps = (props: {
       setPrevProps(Object.values(props.props));
     }
   }, [setPrevProps, prevProps, props.props, props.name]);
-  return <></>;
 };
 
 const detectChanges = (
