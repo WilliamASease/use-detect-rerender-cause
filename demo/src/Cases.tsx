@@ -1,9 +1,9 @@
 import { ReactElement, useCallback, useEffect, useState } from "react";
 import { Button } from "./Components";
 import {
-  useDetectRerenderCauseDeps,
   useDetectRerenderCauseProps,
-} from "./hooks/useDetectRerenderCause";
+  useDetectRerenderCauseDeps,
+} from "use-detect-rerender-cause";
 
 type Case = {
   title: string;
