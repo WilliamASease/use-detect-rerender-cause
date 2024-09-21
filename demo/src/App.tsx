@@ -18,15 +18,15 @@ function App() {
           }}
         >
           <span style={{ fontWeight: "bold" }}>use-detect-rerender-cause</span>
-          <span style={{ marginLeft: 5 }}>| WilliamASease 2024 |</span>
+          <span style={{ marginLeft: 5 }}>| williamsease 2024 |</span>
           <a
             style={{ marginLeft: 5 }}
-            href="https://github.com/WilliamASease/use-detect-rerender-cause"
+            href="https://github.com/williamsease/use-detect-rerender-cause"
           >
             repository
           </a>
           <span> |</span>
-          <a style={{ marginLeft: 5 }} href="https://williamasease.github.io">
+          <a style={{ marginLeft: 5 }} href="https://williamsease.github.io">
             homepage
           </a>
         </div>
